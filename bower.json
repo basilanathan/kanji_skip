@@ -1,0 +1,23 @@
+{
+  "name": "kanji_skip",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Urian Chang <urianchang@gmail.com>",
+    "Le Lin",
+    "Arnold Son"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4"
+  }
+}
