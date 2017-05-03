@@ -13,3 +13,10 @@ var KanjiSchema = new mongoose.Schema({
 })
 //: Register schema as a model
 var Kanji = mongoose.model('Kanji', KanjiSchema);
+
+
+// var tagSchema = {
+// 	characters: [x amount of kanji],
+//	definition of characters: String
+// 	//what you're actually tagging (title/page/whatnots)
+// }
