@@ -1,5 +1,4 @@
-//: Controller for Home page
-myApp.controller('homeController', ['$scope', 'kanjiFactory', function ($scope, kanjiFactory) {
+myApp.controller('levelThreeController', ['$scope', 'kanjiFactory', function ($scope, kanjiFactory) {
     //: This is to check if kanji character is rendered on HTML -- it does
     $scope.kanji = {};
     
