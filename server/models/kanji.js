@@ -7,6 +7,7 @@ var KanjiSchema = new mongoose.Schema({
     p1 : { type: String },
     p2 : { type: String },
     p3 : { type: String },
+    kanji_id : { type: String },
     //: Maybe add fields for radicals / partials and meaning
     created_at : { type: Date, default: Date.now },
     updated_at : { type: Date, default: Date.now }

@@ -16,21 +16,42 @@ module.exports = {
         });
     },
     showRandom1: function(req, res) {
-        Kanji.find({p1: "1"}, function(err, kanjis) {
+        var randomNumber = Math.floor(Math.random() * 8131) + 1;
+        Kanji.findOne({kanji_id: randomNumber}, function(err, kanji) {
             if (err) {
                 res.json(err);
             } else {
-                var randomNumber = Math.floor(Math.random() * kanjis.length);
-                res.json(kanjis[randomNumber]);
+                res.json(kanji);
             }
         });
     },
     showRandom2: function(req, res) {
-        Kanji.findOne({literal: '塩'}, function(err, kanjis) {
+        var randomNumber = Math.floor(Math.random() * 2839) + 8131;
+        Kanji.findOne({kanji_id: randomNumber}, function(err, kanji) {
             if (err) {
                 res.json(err);
             } else {
-                res.json(kanjis);
+                res.json(kanji);
+            }
+        });
+    },
+    showRandom3: function(req, res) {
+        var randomNumber = Math.floor(Math.random() * 907) + 10971;
+        Kanji.findOne({kanji_id: randomNumber}, function(err, kanji) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(kanji);
+            }
+        });
+    },
+    showRandom4: function(req, res) {
+        var randomNumber = Math.floor(Math.random() * 279) + 11879;
+        Kanji.findOne({kanji_id: randomNumber}, function(err, kanji) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(kanji);
             }
         });
     },

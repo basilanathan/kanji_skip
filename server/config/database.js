@@ -11,11 +11,12 @@ Kanji.remove({}, function(err) {
 	if (!err) {
 		for (var idx = 0; idx < kanjiData.length; idx++) {
 		    new Kanji({
-		        literal : kanjiData[idx]['fields']['kanji'],
-		        skipcode : kanjiData[idx]['fields']['skipcode'],
-		        p1 : kanjiData[idx]['fields']['p1'],
-		        p2 : kanjiData[idx]['fields']['p2'],
-		        p3 : kanjiData[idx]['fields']['p3']
+		        literal : kanjiData[idx]['kanji'],
+				kanji_id : kanjiData[idx]['kanji_id'],
+		        skipcode : kanjiData[idx]['skipcode'],
+		        p1 : kanjiData[idx]['p1'],
+		        p2 : kanjiData[idx]['p2'],
+		        p3 : kanjiData[idx]['p3']
 		    }).save();
 		}
 	}
@@ -26,4 +27,3 @@ Kanji.remove({}, function(err) {
 // console.log(kanjiData[0]['fields']);
 
 //: Use a for-loop to create and save each Kanji character
-
