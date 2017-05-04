@@ -25,6 +25,17 @@ myApp.factory('kanjiFactory', ['$http', function($http) {
     				callback(jsonRes.data);
     		});
     };
+    factory.showRandom4 = function(callback) {
+            $http.get('/kanjis/level_four').then(function(jsonRes) {
+                    callback(jsonRes.data);
+            });
+    };
+    factory.showSKIP = function(skip, callback) {
+            $http.get('/kanjis/' + skip).then(function(jsonRes) {
+                    callback(jsonRes.data);
+            });
+    };
+
 
     //: Return the object
     return factory;
