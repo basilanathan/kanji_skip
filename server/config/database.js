@@ -1,7 +1,9 @@
 //: Require mongoose
 var mongoose = require('mongoose');
 //: Require kanji database JSON
-var kanjiData = require('./database/db.json');
+// var kanjiData = require('./database/db.json');
+	//: With frequency attribute
+var kanjiData = require('./database/db_freq.json');
 
 //: Ref to Kanji model
 var Kanji = mongoose.model('Kanji');
@@ -16,7 +18,8 @@ Kanji.remove({}, function(err) {
 		        skipcode : kanjiData[idx]['skipcode'],
 		        p1 : kanjiData[idx]['p1'],
 		        p2 : kanjiData[idx]['p2'],
-		        p3 : kanjiData[idx]['p3']
+		        p3 : kanjiData[idx]['p3'],
+				frequency: kanjiData[idx]['freq']
 		    }).save();
 		}
 	}
