@@ -1,4 +1,12 @@
 <div>
-	{{kanji.literal}}
-	{{kanji.p1}}
+	<p>{{kanji.literal}}</p>
+	<hr>
+	<p>What is the first skip code of this character?</p>
+	<form ng-submit="checkAnswer()">
+		<input type="radio" ng-model="answer" value="1"> 1<br>
+		<input type="radio" ng-model="answer" value="2"> 2<br>
+		<input type="radio" ng-model="answer" value="3"> 3<br>
+		<input type="radio" ng-model="answer" value="4"> 4<br>
+		<input type="submit" value="Check">
+	</form>
 </div>

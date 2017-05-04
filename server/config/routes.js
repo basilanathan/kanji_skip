@@ -13,4 +13,7 @@ module.exports = function(app){
     app.get('/kanjis/level_three', function(req, res) {
         kanjis.showRandom3(req, res);
     });
+    app.get('/kanjis/level_four', function(req, res) {
+        kanjis.showRandom4(req, res);
+    });
 };
