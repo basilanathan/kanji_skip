@@ -30,6 +30,15 @@ myApp.factory('kanjiFactory', ['$http', function($http) {
                     callback(jsonRes.data);
             });
     };
+<<<<<<< HEAD
+=======
+    factory.showSKIP = function(skip, callback) {
+            $http.get('/kanjis/' + skip).then(function(jsonRes) {
+                    callback(jsonRes.data);
+            });
+    };
+
+>>>>>>> cc64c16ec1924996931daa1bdbcb9a14aa68bed8
 
     //: Return the object
     return factory;

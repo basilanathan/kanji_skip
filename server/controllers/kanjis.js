@@ -54,4 +54,15 @@ module.exports = {
             }
         });
     },
+    showSKIP: function(req, res) {
+        var skip = req.params.skip;
+        Kanji.find({skipcode: skip}, function(err, kanjis) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(kanjis);
+            }
+        });
+    },
+
 };

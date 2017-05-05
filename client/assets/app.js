@@ -19,6 +19,10 @@ myApp.config(function ($routeProvider) {
     	templateUrl: 'partials/level_three.html',
     	controller: 'levelThreeController'
     })
+    .when('/lvl_4', {
+    	templateUrl: 'partials/level_four.html',
+    	controller: 'levelFourController'
+    })
     .otherwise({
       redirectTo: '/'
     });

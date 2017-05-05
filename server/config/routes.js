@@ -16,4 +16,10 @@ module.exports = function(app){
     app.get('/kanjis/level_four', function(req, res) {
         kanjis.showRandom4(req, res);
     });
+<<<<<<< HEAD
+=======
+    app.get('/kanjis/:skip', function(req, res) {
+        kanjis.showSKIP(req, res);
+    })
+>>>>>>> cc64c16ec1924996931daa1bdbcb9a14aa68bed8
 };
