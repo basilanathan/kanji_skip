@@ -17,9 +17,6 @@ module.exports = function(app){
     app.get('/kanjis/level_four', function(req, res) {
         kanjis.showRandom4(req, res);
     });
-    app.get('/kanjis/:skip', function(req, res) {
-        kanjis.showSKIP(req, res);
-    });
     app.get('/scores', function(req, res) {
         scores.showScores(req, res);
     });

@@ -1,5 +1,4 @@
 myApp.controller('levelFourController', ['$scope', '$route', 'kanjiFactory', function ($scope, $route, kanjiFactory) {
-    //: This is to check if kanji character is rendered on HTML -- it does
     $scope.kanji = {};
     $scope.kanjis = [];
 
