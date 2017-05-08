@@ -1,4 +1,5 @@
 var kanjis = require('../controllers/kanjis.js');
+var scores = require('../controllers/scores.js');
 
 module.exports = function(app){
     app.get('/kanjis', function(req, res) {
@@ -16,10 +17,10 @@ module.exports = function(app){
     app.get('/kanjis/level_four', function(req, res) {
         kanjis.showRandom4(req, res);
     });
-<<<<<<< HEAD
-=======
-    app.get('/kanjis/:skip', function(req, res) {
-        kanjis.showSKIP(req, res);
-    })
->>>>>>> cc64c16ec1924996931daa1bdbcb9a14aa68bed8
+    app.get('/scores', function(req, res) {
+        scores.showScores(req, res);
+    });
+    app.post('/newscore', function(req, res) {
+        scores.newScore(req, res);
+    });
 };

@@ -1,0 +1,31 @@
+<div>
+    <h1>{{score}}</h1>
+    <button type="button" ng-click="startGame()">Start</button>
+	<p>{{kanji.literal}}</p>
+	{{kanji.p1}}
+	{{kanji.p2}}
+	{{kanji.p3}}
+	<hr>
+	<p>What is the skip code of this character?</p>
+	<form ng-submit="checkAnswer()">
+		<p>First skip code: </p>
+		<div>
+			<input type="radio" ng-model="answer1" value="1"> 1<br>
+			<input type="radio" ng-model="answer1" value="2"> 2<br>
+			<input type="radio" ng-model="answer1" value="3"> 3<br>
+			<input type="radio" ng-model="answer1" value="4"> 4<br>
+		</div>
+		<div>
+			<p>Second skip code: </p>
+			<input type="text" ng-model="answer2"><br>
+		</div>
+		<div>
+			<p>Third skip code: </p>
+			<input type="text" ng-model="answer3"><br>
+		</div>
+		<input type="submit" value="Check">
+	</form>
+	<div ng-repeat="kanji in kanjis">
+		<p ng-click="checkKanji(kanji.literal)">{{kanji.literal}}</p>
+	</div>
+</div>
