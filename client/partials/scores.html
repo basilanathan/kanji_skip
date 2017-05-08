@@ -1,7 +1,8 @@
 <div class="header">
 	<h1>Top 30 High Scores</h1>
 </div>
-<table>
+<h2 ng-if="scores.length == 0">No one has taken on the challenge yet. :( </h2>
+<table ng-if="scores.length > 0">
     <tr>
         <th>Rank</th>
         <th>Name</th>
