@@ -23,6 +23,14 @@ myApp.config(function ($routeProvider) {
     	templateUrl: 'partials/level_four.html',
     	controller: 'levelFourController'
     })
+    .when('/game', {
+    	templateUrl: 'partials/game.html',
+    	controller: 'gameController'
+    })
+    .when('/scores', {
+    	templateUrl: 'partials/scores.html',
+    	controller: 'highscoresController'
+    })
     .otherwise({
       redirectTo: '/'
     });
