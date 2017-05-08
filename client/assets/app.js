@@ -5,11 +5,10 @@ myApp.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
         templateUrl: 'partials/home.html',
-        controller: 'homeController'
     })
     .when('/lvl_1', {
-    		templateUrl: 'partials/level_one.html',
-    		controller: 'levelOneController'
+    	templateUrl: 'partials/level_one.html',
+    	controller: 'levelOneController'
     })
     .when('/lvl_2', {
     	templateUrl: 'partials/level_two.html',

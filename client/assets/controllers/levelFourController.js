@@ -17,11 +17,11 @@ myApp.controller('levelFourController', ['$scope', '$route', 'kanjiFactory', fun
 
     $scope.checkAnswer = function() {
     	if ($scope.answer1 !== $scope.kanji.p1) {
-    		alert("SKIP code 1 incorrect, try again.");
+    		alert("SKIP number 1 incorrect, try again.");
     	} else if ($scope.answer2 !== $scope.kanji.p2) {
-    		alert("SKIP code 2 incorrect, try again.");
+    		alert("SKIP number 2 incorrect, try again.");
     	} else if ($scope.answer3 !== $scope.kanji.p3) {
-    		alert("SKIP code 3 incorrect, try again.")
+    		alert("SKIP number 3 incorrect, try again.")
     	} else {
     		alert("SKIP code is correct. Good job!");
     		kanjiFactory.showSKIP($scope.kanji.skipcode, function(data) {

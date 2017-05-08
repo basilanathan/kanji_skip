@@ -1,5 +1,4 @@
 myApp.controller('gameController', ['$scope', '$route', '$location', 'kanjiFactory', 'highscoreFactory', function ($scope, $route, $location, kanjiFactory, highscoreFactory) {
-    console.log("gameController")
     $scope.kanji = {};
     $scope.kanjis = [];
     $scope.gamestate = false;
@@ -7,6 +6,7 @@ myApp.controller('gameController', ['$scope', '$route', '$location', 'kanjiFacto
     $scope.answer1 = "";
     $scope.answer2 = "";
     $scope.answer3 = "";
+
     $scope.startGame = function(){
         console.log('game started');  //: Checking if button works
         $scope.gamestate = true;
@@ -21,16 +21,21 @@ myApp.controller('gameController', ['$scope', '$route', '$location', 'kanjiFacto
         });
     }
 
-    $scope.checkKanji = function(kanji){
+    $scope.checkKanji = function($index, kanji){
         if(!$scope.gamestate){
             alert("Game is over")
         } else if(kanji === $scope.kanji.literal){
             console.log("It's a matching kanji.")
             $scope.score += 1;
             $scope.kanjis = [];
+            $scope.answer1 = "";
+            $scope.answer2 = "";
+            $scope.answer3 = "";
             kanjiFactory.showRandom(function(data) {
             	$scope.kanji = data;
             });
+        } else {
+            angular.element(`#${$index}`).css('background-color', 'red');
         }
     }
 
@@ -41,11 +46,11 @@ myApp.controller('gameController', ['$scope', '$route', '$location', 'kanjiFacto
         if(!$scope.gamestate){
             alert("Game is over")
         } else if ($scope.answer1 !== $scope.kanji.p1) {
-    		alert("Skip code 1 incorrect, try again.");
+    		alert("SKIP number 1 incorrect, try again.");
     	} else if ($scope.answer2 !== $scope.kanji.p2) {
-    		alert("Skip code 2 incorrect, try again.");
+    		alert("Skip number 2 incorrect, try again.");
     	} else if ($scope.answer3 !== $scope.kanji.p3) {
-    		alert("Skip code 3 incorrect, try again.")
+    		alert("Skip number 3 incorrect, try again.")
     	} else {
     		// alert("You got it correct, good job!");
     		kanjiFactory.showSKIP($scope.kanji.skipcode, function(data) {
