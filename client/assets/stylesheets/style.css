@@ -122,3 +122,9 @@ form {
     margin-left: 20px;
     line-height: 25px;
 }
+.countdown {
+    color: red;
+}
+.score {
+    color: green;
+}

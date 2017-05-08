@@ -1,4 +1,4 @@
-myApp.controller('gameController', ['$scope', '$route', '$location', 'kanjiFactory', 'highscoreFactory', function ($scope, $route, $location, kanjiFactory, highscoreFactory) {
+myApp.controller('gameController', ['$scope', '$route', '$location', '$timeout', 'kanjiFactory', 'highscoreFactory', function ($scope, $route, $location, $timeout, kanjiFactory, highscoreFactory) {
     $scope.kanji = {};
     $scope.kanjis = [];
     $scope.gamestate = false;
@@ -6,18 +6,25 @@ myApp.controller('gameController', ['$scope', '$route', '$location', 'kanjiFacto
     $scope.answer1 = "";
     $scope.answer2 = "";
     $scope.answer3 = "";
+    $scope.countdown = 60;
 
     $scope.startGame = function(){
         console.log('game started');  //: Checking if button works
         $scope.gamestate = true;
-        setTimeout(function(){
-            $scope.gamestate = false;
-            var name = prompt("Please enter your name", "Anonymous");
-            var newScore = {name: name, score: $scope.score};
-            highscoreFactory.newScore(newScore, function() { $location.url('/scores') })
-        }, 60000);
+        var countDown = function() {
+            if ($scope.countdown === 0) {
+                $scope.gamestate = false;
+                var name = prompt("Please enter your name", "Anonymous");
+                var newScore = {name: name, score: $scope.score};
+                highscoreFactory.newScore(newScore, function() { $location.url('/scores') });
+            } else {
+                $scope.countdown--;
+                $timeout(countDown, 1000);
+            }
+        }
         kanjiFactory.showRandom(function(data) {
         	$scope.kanji = data;
+            countDown();
         });
     }
 
