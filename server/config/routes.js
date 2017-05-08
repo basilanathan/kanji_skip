@@ -23,4 +23,7 @@ module.exports = function(app){
     app.post('/newscore', function(req, res) {
         scores.newScore(req, res);
     });
+    app.get('/kanjis/:skip', function(req, res) {
+        kanjis.showSKIP(req, res);
+    })
 };

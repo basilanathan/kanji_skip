@@ -1,5 +1,4 @@
 myApp.controller('gameController', ['$scope', '$route', '$location', 'kanjiFactory', 'highscoreFactory', function ($scope, $route, $location, kanjiFactory, highscoreFactory) {
-    //: This is to check if kanji character is rendered on HTML -- it does
     console.log("gameController")
     $scope.kanji = {};
     $scope.kanjis = [];
