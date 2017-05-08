@@ -87,5 +87,23 @@ td{
     margin: 10px 0px;
 }
 .footer {
-    margin-top: 30px;
+    margin-top: 20px;
+}
+.kanji {
+    text-align: center;
+    margin: 20px;
+    height: 100px;
+    width: 100px;
+    border: 3px solid black;
+    line-height: 100px;
+}
+.kanji h1 {
+    font-size: 500%;
+}
+hr {
+    margin: 15px 0px;
+}
+form {
+    margin-left: 20px;
+    line-height: 25px;
 }

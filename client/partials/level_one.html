@@ -1,12 +1,14 @@
-<div>
-	<p>{{kanji.literal}}</p>
-	<hr>
-	<p>What is the first skip code of this character?</p>
-	<form ng-submit="checkAnswer()">
-		<input type="radio" ng-model="answer" value="1"> 1<br>
-		<input type="radio" ng-model="answer" value="2"> 2<br>
-		<input type="radio" ng-model="answer" value="3"> 3<br>
-		<input type="radio" ng-model="answer" value="4"> 4<br>
-		<input type="submit" value="Check">
-	</form>
+<div class="header">
+	<h1>Level 1: Identify the kanji's visual style</h1>
 </div>
+<div class="kanji">
+	<h1>{{kanji.literal}}</h1>
+</div>
+<p>What is the first number for this kanji's SKIP code?</p>
+<form ng-submit="checkAnswer()">
+	<input type="radio" ng-model="answer" value="1"> 1<br>
+	<input type="radio" ng-model="answer" value="2"> 2<br>
+	<input type="radio" ng-model="answer" value="3"> 3<br>
+	<input type="radio" ng-model="answer" value="4"> 4<br>
+	<input class="button" type="submit" value="Check">
+</form>
