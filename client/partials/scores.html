@@ -1,12 +1,15 @@
-<div>
-    <table>
-        <tr>
-            <th>Name:</th>
-            <th>Score:</th>
-        </tr>
-        <tr ng-repeat="score in scores">
-            <td>{{score.name}}</td>
-            <td>{{score.score}}</td>
-        </tr>
-    </table>
+<div class="header">
+	<h1>Top 30 High Scores</h1>
 </div>
+<table>
+    <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Score</th>
+    </tr>
+    <tr ng-repeat="score in scores | orderBy: ['-score', 'created_at'] | limitTo: 30 track by $index">
+        <td>{{$index + 1}}</td>
+        <td>{{score.name}}</td>
+        <td>{{score.score}}</td>
+    </tr>
+</table>
