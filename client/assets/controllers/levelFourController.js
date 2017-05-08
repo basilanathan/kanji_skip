@@ -5,22 +5,25 @@ myApp.controller('levelFourController', ['$scope', '$route', 'kanjiFactory', fun
     kanjiFactory.showRandom(function(data) {
     	$scope.kanji = data;
     });
-    $scope.checkKanji = function(kanji){
+
+    $scope.checkKanji = function($index, kanji){
         if(kanji === $scope.kanji.literal){
-            console.log("It's a matching kanji.")
+            alert("Correct kanji selected.");
             $route.reload();
+        } else {
+            angular.element(`#${$index}`).css('background-color', 'red');
         }
     }
 
     $scope.checkAnswer = function() {
     	if ($scope.answer1 !== $scope.kanji.p1) {
-    		alert("Skip code 1 incorrect, try again.");
+    		alert("SKIP code 1 incorrect, try again.");
     	} else if ($scope.answer2 !== $scope.kanji.p2) {
-    		alert("Skip code 2 incorrect, try again.");
+    		alert("SKIP code 2 incorrect, try again.");
     	} else if ($scope.answer3 !== $scope.kanji.p3) {
-    		alert("Skip code 3 incorrect, try again.")
+    		alert("SKIP code 3 incorrect, try again.")
     	} else {
-    		alert("You got it correct, good job!");
+    		alert("SKIP code is correct. Good job!");
     		kanjiFactory.showSKIP($scope.kanji.skipcode, function(data) {
                 $scope.kanjis = data;
             })
