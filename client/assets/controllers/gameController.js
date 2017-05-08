@@ -2,9 +2,14 @@ myApp.controller('gameController', ['$scope', '$route', '$location', 'kanjiFacto
     console.log("gameController")
     $scope.kanji = {};
     $scope.kanjis = [];
-    $scope.gamestate = true;
+    $scope.gamestate = false;
     $scope.score = 0;
+    $scope.answer1 = "";
+    $scope.answer2 = "";
+    $scope.answer3 = "";
     $scope.startGame = function(){
+        console.log('game started');  //: Checking if button works
+        $scope.gamestate = true;
         setTimeout(function(){
             $scope.gamestate = false;
             var name = prompt("Please enter your name", "Anonymous");
@@ -30,6 +35,9 @@ myApp.controller('gameController', ['$scope', '$route', '$location', 'kanjiFacto
     }
 
     $scope.checkAnswer = function() {
+        // console.log($scope.answer1);
+        // console.log($scope.answer2);
+        // console.log($scope.answer3);
         if(!$scope.gamestate){
             alert("Game is over")
         } else if ($scope.answer1 !== $scope.kanji.p1) {
