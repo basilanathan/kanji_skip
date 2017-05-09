@@ -61,6 +61,13 @@ myApp.controller('gameController', ['$scope', '$route', '$location', '$timeout',
     	} else {
     		// alert("You got it correct, good job!");
     		kanjiFactory.showSKIP($scope.kanji.skipcode, function(data) {
+                //: Convert frequency from JSON to Float for ordering
+                angular.forEach(data, function(value, key) {
+                    if (value.frequency === "unranked") {
+                        value.frequency = 99999;
+                    }
+                    value.frequency = parseFloat(value.frequency);
+                });
                 $scope.kanjis = data;
             })
     	}

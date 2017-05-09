@@ -25,7 +25,8 @@
 </form>
 <div class="kanji-selection" ng-if="kanjis.length > 0">
 	<p>Please select the right kanji character:</p>
-	<div class="kanji-block" ng-repeat="kanji in kanjis track by $index" ng-click="checkKanji($index, kanji.literal)" id="{{$index}}">
+	<div class="kanji-block" ng-repeat="kanji in kanjis | orderBy: 'frequency' track by $index" ng-click="checkKanji($index, kanji.literal)" id="{{$index}}">
 		<p>{{kanji.literal}}</p>
+		<small>{{kanji.frequency}}</small>
 	</div>
 </div>
