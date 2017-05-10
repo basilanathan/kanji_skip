@@ -4,12 +4,6 @@
 <div class="kanji">
 	<h1>{{kanji.literal}}</h1>
 </div>
-<p style="color: green; margin: 20px;">
-	Answer:
-	{{kanji.p1}}
-	{{kanji.p2}}
-	{{kanji.p3}}
-</p>
 <p>What is the SKIP code of this character?</p>
 <form ng-submit="checkAnswer()">
 	<p>First number:</p>
@@ -27,6 +21,5 @@
 	<p>Please select the right kanji character:</p>
 	<div class="kanji-block" ng-repeat="kanji in kanjis | orderBy: 'frequency' track by $index" ng-click="checkKanji($index, kanji.literal)" id="{{$index}}">
 		<p>{{kanji.literal}}</p>
-		<small>{{kanji.frequency}}</small>
 	</div>
 </div>
