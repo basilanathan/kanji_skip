@@ -30,6 +30,9 @@ myApp.config(function ($routeProvider) {
     	templateUrl: 'partials/scores.html',
     	controller: 'highscoresController'
     })
+    .when('/feedback', {
+        templateUrl: 'partials/feedback.html'
+    })
     .otherwise({
       redirectTo: '/'
     });
