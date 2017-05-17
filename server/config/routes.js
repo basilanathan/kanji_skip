@@ -5,6 +5,9 @@ module.exports = function(app){
     app.get('/kanjis', function(req, res) {
         kanjis.showRandom(req, res);
     });
+    app.get('/kanjis/all', function(req, res) {
+        kanjis.getAllKanjis(req, res);
+    });
     app.get('/kanjis/level_one', function(req, res) {
         kanjis.showRandom1(req, res);
     });

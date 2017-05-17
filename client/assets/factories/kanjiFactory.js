@@ -1,7 +1,11 @@
 //: Kanji factory
 myApp.factory('kanjiFactory', ['$http', function($http) {
     var factory = {};
-
+    factory.getAllKanjis = function(callback) {
+        $http.get('/kanjis/all').then(function(jsonRes) {
+            callback(jsonRes.data);
+        });
+    };
     factory.showRandom = function(callback) {
         $http.get('/kanjis').then(function(jsonRes) {
             callback(jsonRes.data);

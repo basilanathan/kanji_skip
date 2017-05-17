@@ -6,6 +6,10 @@ myApp.config(function ($routeProvider) {
     .when('/', {
         templateUrl: 'partials/home.html',
     })
+    .when('/dictionary', {
+        templateUrl: 'partials/dictionary.html',
+        controller: 'dictionaryController'
+    })
     .when('/lvl_1', {
     	templateUrl: 'partials/level_one.html',
     	controller: 'levelOneController'

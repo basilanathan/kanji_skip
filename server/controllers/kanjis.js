@@ -4,6 +4,15 @@ var mongoose = require('mongoose');
 var Kanji = mongoose.model('Kanji');
 
 module.exports = {
+    getAllKanjis: function(req, res) {
+        Kanji.find({}, function(err, kanjis) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(kanjis);
+            }
+        });
+    },
     showRandom: function(req, res) {
         var randomNumber = Math.floor(Math.random() * 12158) + 1;
         Kanji.findOne({kanji_id: randomNumber}, function(err, kanji) {
