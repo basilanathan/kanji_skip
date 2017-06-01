@@ -1,11 +1,11 @@
-<div class="header">
+<div class="header_levels">
 	<h1>Level 1: Identify the kanji's visual style</h1>
 </div>
-<div class="kanji">
-	<h1>{{kanji.literal}}</h1>
+<div >
+	<h1 class = "kanji">{{kanji.literal}}</h1>
 </div>
-<p>What is the first number for this kanji's SKIP code?</p>
-<form ng-submit="checkAnswer()">
+<p class = "description_levels">What is the first number for this kanji's SKIP code?</p>
+<form class = "form_levels" ng-submit="checkAnswer()">
 	<input type="radio" ng-model="answer" value="1"> 1<br>
 	<input type="radio" ng-model="answer" value="2"> 2<br>
 	<input type="radio" ng-model="answer" value="3"> 3<br>

@@ -1,0 +1,44 @@
+*
+{
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/*.header {
+  background-image:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(http://s1.picswalls.com/wallpapers/2014/07/25/japan-background_043257527_108.jpg);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+
+}*/
+
+.header1 {
+  text-align: center;
+}
+
+.kanji {
+  position: absolute;
+  margin-top:7%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  font-family: monospace;
+}
+
+.header_levels {
+  text-align: center;
+}
+
+.description_levels {
+  text-align: center;
+}
+
+.form_levels {
+  text-align: center;
+  margin-top: 120px;
+}
